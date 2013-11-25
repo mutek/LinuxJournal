@@ -8,6 +8,9 @@
 #
 #
 
+mkdir -p PDF EPUB MOBI
+wait
+
 . ./genThumb.sh
 wait
 
@@ -17,7 +20,10 @@ wait
 mv incoming/*.pdf PDF/
 wait
 
-mv incoming/*.mp3 AUDIO/
+mv incoming/*.epub EPUB/
+wait
+
+mv incoming/*.mobi MOBI/
 wait
 
 mv model/body.html model/body.html.old
@@ -27,7 +33,7 @@ for file in $(ls PDF | cut -d"." -f 1 | sort -r)
 do
 
         echo $file
-echo "<li><a href=\"http://mutek.github.io/LinuxJournal/PDF/"$file".pdf\"><img src=\"http://mutek.github.io/LinuxJournal/Covers/"$file".pdf.png\" style=\"max-width: 307px;\" alt=\"LinuxJournal numero "$file"\"></a><div>"$file"</div>"$file"</li>" >> model/body.html
+echo "<li><a href=\"http://mutek.github.io/LinuxJournal/PDF/"$file".pdf\"><img src=\"http://mutek.github.io/LinuxJournal/Covers/"$file".pdf.png\" style=\"max-width: 200px;\" alt=\"LinuxJournal numero "$file"\"></a><div>"$file"</div>"$file"</li>" >> model/body.html
 wait
 
 done
