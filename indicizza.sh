@@ -33,7 +33,7 @@ for file in $(ls PDF | cut -d"." -f 1 | sort -r)
 do
 
         echo $file
-echo "<li><a href=\"http://mutek.github.io/LinuxJournal/PDF/"$file".pdf\"><img src=\"http://mutek.github.io/LinuxJournal/Covers/"$file".pdf.png\" style=\"max-width: 314px;\" alt=\"LinuxJournal numero "$file"\"></a><div>"$file"</div>"$file"</li>" >> model/body.html
+echo "<li><a href=\"http://mutek.github.io/LinuxJournal/PDF/"$file".pdf\"><img src=\"http://mutek.github.io/LinuxJournal/Covers/"$file".pdf.png\" style=\"max-width: 314px;\" alt=\"LinuxJournal numero "$file"\"></a><div><a href=\"http://mutek.github.io/LinuxJournal/MOBI/"$file.mobi">MOBI</a><a href=\"http://mutek.github.io/LinuxJournal/EPUB/"$file.epub">EPUB</a></div>"$file"</li>" >> model/body.html
 wait
 
 done
